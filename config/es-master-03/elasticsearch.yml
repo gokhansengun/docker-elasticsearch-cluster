@@ -1,0 +1,51 @@
+node.master: true
+node.data: false
+
+#
+# Cluster Name 
+#
+cluster.name: es-test-cluster
+
+#
+# Node Name
+#
+node.name: es-master-03
+
+#
+# Lock the memory on startup
+# Below is currently erroring in starting the node
+#
+#bootstrap.memory_lock: true
+
+#
+# bind to all ip addresses
+# TODO: gseng - change this in production
+#
+network.host: 0.0.0.0 
+http.port: 9200
+
+#
+# Pass an initial list of hosts to perform discovery when new node is started:
+#
+discovery.zen.ping.unicast.hosts: [ "es-master-01", "es-master-02", "es-master-03" ]
+
+#
+# Prevent the "split brain" by configuring the majority of nodes (total number of nodes / 2 + 1):
+#
+discovery.zen.minimum_master_nodes: 2
+
+#
+# Add custom attributes to the node:
+#
+#node.attr.rack: r1
+#
+# ----------------------------------- Paths ------------------------------------
+#
+# Path to directory where to store the data (separate multiple locations by comma):
+#
+#path.data: /path/to/data
+#
+# Path to log files:
+#
+#path.logs: /path/to/logs
+#

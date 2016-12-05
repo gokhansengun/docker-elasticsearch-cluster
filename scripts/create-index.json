@@ -1,0 +1,26 @@
+{
+    "settings": {
+        "index": {
+            "number_of_shards": 2,
+            "number_of_replicas": 1
+        }
+    },
+    "mappings": {
+        "blogs": {
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "title": {
+                    "type": "text"
+                },
+                "content": {
+                    "type": "text"
+                },
+                "date": {
+                    "type": "date"
+                }
+            }
+        }
+    }
+}

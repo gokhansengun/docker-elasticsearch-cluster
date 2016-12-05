@@ -1,0 +1,74 @@
+version: "2"
+
+services:
+
+  es-client-01:
+    image: elasticsearch
+    environment:
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+    volumes:
+      - ./config/es-client-01/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+
+  es-client-02:
+    image: elasticsearch
+    environment:
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+    volumes:
+      - ./config/es-client-02/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
+    ports:
+      - "9201:9200"
+      - "9301:9300"
+
+  es-master-01:
+    image: elasticsearch
+    environment:
+       - ES_JAVA_OPTS=-Xms512m -Xmx512m
+    volumes:
+      - ./config/es-master-01/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
+
+  es-master-02:
+    image: elasticsearch
+    environment:
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+    volumes:
+      - ./config/es-master-02/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
+
+  es-master-03:
+    image: elasticsearch
+    environment:
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+    volumes:
+      - ./config/es-master-03/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
+
+  es-data-01:
+    image: elasticsearch
+    volumes:
+      - "/opt/elasticsearch/data"
+      - ./config/es-data-01/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
+    environment:
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+
+  es-data-02:
+    image: elasticsearch
+    volumes:
+      - "/opt/elasticsearch/data"
+      - ./config/es-data-02/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
+    environment:
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+
+  es-data-03:
+    image: elasticsearch
+    volumes:
+      - "/opt/elasticsearch/data"
+      - ./config/es-data-03/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
+    environment:
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+
+  query-service:
+    image: tutum/curl
+    working_dir: /scripts
+    volumes:
+      - ./scripts:/scripts
