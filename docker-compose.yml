@@ -3,7 +3,7 @@ version: "2"
 services:
 
   es-client-01:
-    image: elasticsearch
+    image: elasticsearch:5.1.1
     environment:
       - ES_JAVA_OPTS=-Xms512m -Xmx512m
     volumes:
@@ -13,7 +13,7 @@ services:
       - "9300:9300"
 
   es-client-02:
-    image: elasticsearch
+    image: elasticsearch:5.1.1
     environment:
       - ES_JAVA_OPTS=-Xms512m -Xmx512m
     volumes:
@@ -23,28 +23,28 @@ services:
       - "9301:9300"
 
   es-master-01:
-    image: elasticsearch
+    image: elasticsearch:5.1.1
     environment:
        - ES_JAVA_OPTS=-Xms512m -Xmx512m
     volumes:
       - ./config/es-master-01/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
 
   es-master-02:
-    image: elasticsearch
+    image: elasticsearch:5.1.1
     environment:
       - ES_JAVA_OPTS=-Xms512m -Xmx512m
     volumes:
       - ./config/es-master-02/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
 
   es-master-03:
-    image: elasticsearch
+    image: elasticsearch:5.1.1
     environment:
       - ES_JAVA_OPTS=-Xms512m -Xmx512m
     volumes:
       - ./config/es-master-03/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
 
   es-data-01:
-    image: elasticsearch
+    image: elasticsearch:5.1.1
     volumes:
       - "/opt/elasticsearch/data"
       - ./config/es-data-01/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
@@ -52,7 +52,7 @@ services:
       - ES_JAVA_OPTS=-Xms512m -Xmx512m
 
   es-data-02:
-    image: elasticsearch
+    image: elasticsearch:5.1.1
     volumes:
       - "/opt/elasticsearch/data"
       - ./config/es-data-02/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
@@ -60,7 +60,7 @@ services:
       - ES_JAVA_OPTS=-Xms512m -Xmx512m
 
   es-data-03:
-    image: elasticsearch
+    image: elasticsearch:5.1.1
     volumes:
       - "/opt/elasticsearch/data"
       - ./config/es-data-03/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
