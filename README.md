@@ -2,7 +2,7 @@
 
 Creates a Elasticsearch Cluster consisting of 2 client, 3 master and 3 data nodes using Docker.
 
-**CAUTION:** You will need at least 8 GB of free memory allocated to Docker daemon to be able to get cluster up and running.
+**CAUTION:** You will need at least 2 GB of free memory allocated to Docker daemon to be able to get cluster up and running.
 
 ## Usage
 

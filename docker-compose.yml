@@ -5,7 +5,7 @@ services:
   es-client-01:
     image: elasticsearch:5.1.1
     environment:
-      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+      - ES_JAVA_OPTS=-Xms128m -Xmx128m
     volumes:
       - ./config/es-client-01/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
     ports:
@@ -15,7 +15,7 @@ services:
   es-client-02:
     image: elasticsearch:5.1.1
     environment:
-      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+      - ES_JAVA_OPTS=-Xms128m -Xmx128m
     volumes:
       - ./config/es-client-02/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
     ports:
@@ -25,21 +25,21 @@ services:
   es-master-01:
     image: elasticsearch:5.1.1
     environment:
-       - ES_JAVA_OPTS=-Xms512m -Xmx512m
+       - ES_JAVA_OPTS=-Xms128m -Xmx128m
     volumes:
       - ./config/es-master-01/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
 
   es-master-02:
     image: elasticsearch:5.1.1
     environment:
-      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+      - ES_JAVA_OPTS=-Xms128m -Xmx128m
     volumes:
       - ./config/es-master-02/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
 
   es-master-03:
     image: elasticsearch:5.1.1
     environment:
-      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+      - ES_JAVA_OPTS=-Xms128m -Xmx128m
     volumes:
       - ./config/es-master-03/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
 
@@ -49,7 +49,7 @@ services:
       - "/opt/elasticsearch/data"
       - ./config/es-data-01/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
     environment:
-      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+      - ES_JAVA_OPTS=-Xms128m -Xmx128m
 
   es-data-02:
     image: elasticsearch:5.1.1
@@ -57,7 +57,7 @@ services:
       - "/opt/elasticsearch/data"
       - ./config/es-data-02/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
     environment:
-      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+      - ES_JAVA_OPTS=-Xms128m -Xmx128m
 
   es-data-03:
     image: elasticsearch:5.1.1
@@ -65,7 +65,7 @@ services:
       - "/opt/elasticsearch/data"
       - ./config/es-data-03/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
     environment:
-      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+      - ES_JAVA_OPTS=-Xms128m -Xmx128m
 
   query-service:
     image: tutum/curl
